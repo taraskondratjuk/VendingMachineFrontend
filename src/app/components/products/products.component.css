@@ -1,0 +1,95 @@
+
+.machine{
+  /*margin-top: 10px;*/
+  border: #0a0a0a solid;
+  background: crimson;
+  height: 580px;
+  width: 750px;
+}
+
+.addNewProduct{
+  margin-left: 300px;
+  font-size: 20px;
+  font-family: cursive;
+  color: #0c0c0c;
+}
+
+.block{
+  display: block;
+}
+
+.none{
+  display: none;
+}
+
+.button{
+  height: 50px;
+  width: 252px;
+  margin-bottom: 2px;
+  font-family: cursive;
+  font-size: 20px;
+  background: green;
+
+}
+
+.buttons{
+  display: flex;
+}
+
+.vendingMachineCreateButton{
+  height: 50px;
+  width: 756px;
+  margin-bottom: 2px;
+  font-family: cursive;
+  font-size: 30px;
+  background: green;
+}
+
+
+.vendingMachineBlock {
+  width: 800px;
+}
+
+.statisticBlock {
+  width: 550px;
+ background: darkslategray;
+  border: #0a0a0a solid;
+}
+
+.main {
+  display: flex;
+}
+
+.buttonClosedStatisticsBlock{
+  margin-left: 525px;
+
+}
+
+.buttonClosedStatisticsBlock:hover{
+  margin-left: 525px;
+  background: #de0517;
+}
+
+
+.statisticsDescription{
+  text-align: center;
+  font-family: cursive;
+  font-size: 25px;
+}
+
+.viewStatistics{
+  font-size: 25px;
+  font-family: Arial;
+}
+
+.vendingMachineNameBlock{
+  border: #0a0a0a solid;
+  margin: 0;
+  width: 750px;
+  background: #1a623a;
+  font-family: cursive;
+  text-align: center;
+  font-size: 40px;
+}
+
+

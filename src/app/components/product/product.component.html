@@ -1,0 +1,15 @@
+<div class="vendingMachine">
+  <strong class="productName">{{product.productName}}</strong>
+  <strong class="price">{{product.productPrice}}$</strong>
+  <strong class="countOfProducts">{{product.countOfProduct}}</strong>
+
+
+
+  <button *ngIf="product.countOfProduct>0" class="buyButton" (click)="buyProduct(product)" >Buy</button>
+  <button *ngIf="product.countOfProduct==0" class="deleteButton"(click)="deleteProduct(product)">Delete</button>
+
+</div>
+
+
+
+

@@ -1,0 +1,45 @@
+.vendingMachine {
+  margin: 5px;
+  margin-left: 20px;
+  height: 50px;
+  width: 800px;
+  display: flex;
+  background: #0f5555;
+  font-family: cursive;
+  font-size: 30px;
+  justify-content: space-between;
+  border: 4px solid;
+  border-radius: 5px 25px 25px 5px;
+}
+
+.buyButton {
+  background: greenyellow;
+}
+
+.deleteButton {
+  background: #e00417;
+}
+
+button {
+  height: 50px;
+  width: 65px;
+  margin-bottom: 2px;
+  font-family: cursive;
+  border-radius: 20px;
+}
+
+.productName {
+  width: 60%;
+}
+
+.price .countOfProducts {
+  width: 13%;
+}
+
+.buyButton:hover {
+  background: #70b305;
+}
+
+.deleteButton:hover {
+  background: #fa3e4e;
+}

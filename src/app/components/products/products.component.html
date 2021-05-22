@@ -1,0 +1,136 @@
+<div class="main">
+
+  <div class="vendingMachineBlock">
+    <button *ngIf="vendingMachine.length==0" (click)="createVendingMachine()" class="vendingMachineCreateButton">Create
+      Vending Machine
+    </button>
+
+    <div [class]="myCreateVendingMachineFormIsVisible">
+      <p class="addNewProduct">Add new Vending Machine</p>
+
+      <form [formGroup]="myVendingMachineForm" (ngSubmit)="saveVendingMachine()">
+
+        <label>
+          Add name of Vending Machine :
+          <input type="text" [formControl]="vendingMachineName" [defaultValue]=" "
+                 placeholder="name of Vending Machine...">
+        </label>
+
+
+        <button (click)="hideFormToAddCategory()">Save</button>
+
+      </form>
+
+
+    </div>
+
+    <div *ngIf="vendingMachine.length!=0" class="vendingMachineNameBlock">
+      Welcome to {{vendingMachine[0].vendingMachineName}} Shop
+    </div>
+
+    <div class="buttons" *ngIf="vendingMachine.length!=0">
+      <button (click)="showFormToAddCategory()" class="button" [class]="addProductButton">Add category</button>
+      <button (click)="showProductFormIsVisible()" class="button" [class]="addProductButton">Add products</button>
+      <button (click)="snowStatisticsBlock()" class="button" [class]="addProductButton">Show statistic</button>
+    </div>
+
+
+    <div [class]="myCategoryFormIsVisible">
+      <p class="addNewProduct">Add new category</p>
+
+      <form [formGroup]="myCategoryForm" (ngSubmit)="saveCategory()">
+
+        <label>
+          Category :
+          <input type="text" [formControl]="productName" [defaultValue]=" " placeholder="Name of Category...">
+        </label>
+
+
+        <label>
+          Price :
+          <input type="number" [formControl]="productPrice" [defaultValue]=" " placeholder="Product price...">
+        </label>
+
+        <label>
+          Count :
+          <input type="number" [formControl]="countOfProduct" [defaultValue]=" " placeholder="Count of products...">
+        </label>
+
+        <button (click)="hideFormToAddCategory()">Save</button>
+
+      </form>
+
+
+    </div>
+
+    <div [class]="myProductFormIsVisible">
+      <p class="addNewProduct">Add products</p>
+
+      <form [formGroup]="myCategoryForm" (ngSubmit)="saveProduct()">
+
+        <label>
+          Category :
+          <input type="text" [formControl]="productName" [defaultValue]=" " placeholder="Name of Category...">
+        </label>
+
+
+        <label>
+          Count :
+          <input type="number" [formControl]="countOfProduct" [defaultValue]=" " placeholder="Count of Products...">
+        </label>
+
+        <button (click)="hideProductFormIsVisible()">Save</button>
+
+      </form>
+
+
+    </div>
+
+
+    <div class="machine">
+
+      <app-product *ngFor="let product of products" [product]="product" (buyProductUp)="boughtProduct($event)"
+                   (deleteProductUp)="deletedProduct($event)" class="main"></app-product>
+    </div>
+  </div>
+
+
+  <div class="statisticBlock" [class]="isVisibleStatisticsBlock">
+    <button class="buttonClosedStatisticsBlock" (click)="closeStatisticsBlock()">X</button>
+    <h1 class="statisticsDescription">Chose statistics date</h1>
+    <p>* if you set a year, you will get statistics from the year </p>
+    <p>* if you set a year and a month, you will get statistics from the year and the month </p>
+    <p>* if you set a year, a month and a day, you will get statistics since the date </p>
+
+    <div>
+
+      <form [formGroup]="myStatisticsForm" (ngSubmit)="saveDataOf()">
+
+        <label>
+          Year :
+          <input type="number" [formControl]="year" [defaultValue]=" " placeholder="year..." style="width: 75px">
+        </label>
+
+
+        <label>
+          Month :
+          <input type="number" [formControl]="month" [defaultValue]=" " placeholder="month..." style="width: 75px">
+        </label>
+
+        <label>
+          Day :
+          <input type="number" [formControl]="day" [defaultValue]=" " placeholder="day..." style="width: 75px">
+        </label>
+
+        <button (click)="hideFormToAddCategory()">Save</button>
+
+      </form>
+
+      <div *ngFor=" let item of statistic" class="viewStatistics">
+        {{item}}
+      </div>
+
+
+    </div>
+  </div>
+</div>
